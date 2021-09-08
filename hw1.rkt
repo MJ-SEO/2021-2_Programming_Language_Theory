@@ -99,10 +99,6 @@
 (define myGraduateStudent (GraduateStudent 2 4));
 (define myGraduateStudent2 (GraduateStudent 3 1));
 
-(PERSON? myProfessor)
-(Professor? myProfessor)
-(Professor-courses myProfessor)
-
 ; Problem 6-b
 ; Solved by myserlf: Y
 ; Time taken: about 15 mins
@@ -153,20 +149,64 @@
 
 ; Problem 7
 ; Solved by myserlf: Y
-; Time taken: about 30 mins
+; Time taken: about 70 mins
+; [contract] convert-name: symbol -> symbol
+; [purpose] To translate a alphabet to the specific name. 
+
 ; [contract] name-alphabet : list -> list
-; [purpose] To translate the alphabet list to name list starting with the alphabet character. 
-; [test] (test(name-alphabet '()) #f)
-;        (test(ready-to-graduate myGraduateStudent) #t)
-;        (test(ready-to-graduate myGraduateStudent) #f)
+; [purpose] To translate a alphabet list to specific name list starting with the alphabet character. 
+; [test] (test(name-alphabet '(a b n)) '(alice unnamed unnamed))
+;        (test (name-alphabet '(a c j k)) '(alice cherry jc kate))
+;        (test (name-alphabet '(w x y z)) '(unnamed unnamed unnamed unnamed))
+
+(define (convert-name alpha)
+  (cond
+    [(symbol=? alpha 'a) 'alice]
+    [(symbol=? alpha 'c) 'cherry]
+    [(symbol=? alpha 'j) 'jc]
+    [(symbol=? alpha 'k) 'kate]
+    [else 'unnamed]
+    )
+  )
+
+(define (name-alphabet lst)
+  (cond
+    [(empty? lst) empty]
+    [else (cons (convert-name(first lst))
+                (name-alphabet(rest lst)))]
+    )
+  )
+
+(test (name-alphabet '(a b n)) '(alice unnamed unnamed))
+(test (name-alphabet '(a c j k)) '(alice cherry jc kate))
+(test (name-alphabet '(w x y z)) '(unnamed unnamed unnamed unnamed))
 
 ; Problem 8
 ; Solved by myserlf: Y
-; Time taken: about 30 mins
-; [contract] update-name :  
+; Time taken: about 40 mins
+; [contract] update-name : symbol symbol list -> list
 ; [purpose] Check whether the PERSON is able to graduate or not
-; [test] (test(ready-to-graduate myProfessor) #f)
+; [test] (test(update-name 'cherry 'claire (cons 'jc (cons 'cherry (cons 'kate empty))))'(jc claire kate))
 ;        (test(ready-to-graduate myGraduateStudent) #t)
 ;        (test(ready-to-graduate myGraduateStudent) #f)
 
 
+(define (old_to_new old inp new)
+  (cond
+    [(equal? old inp) new]
+    [else inp]
+    )
+  )
+
+(define (update-name old new lst)
+  (cond
+    [(empty? lst) empty]
+    [else (cons (old_to_new old (first lst) new)
+                (update-name old new (rest lst)))]
+    )
+  )
+
+(test(update-name 'cherry 'claire (cons 'jc (cons 'cherry (cons 'kate empty))))'(jc claire kate))
+(test(update-name 'jc 'mj (cons 'jc (cons 'alice (cons 'john empty)))) '(mj alice john))
+(test(update-name 'dog 'cat (cons 'lion (cons 'dog (cons 'sparrow empty))))'(lion cat sparrow))
+(test(update-name 'dog 'cat (list 'lion 'dog 'sparrow)) '(lion cat sparrow))
