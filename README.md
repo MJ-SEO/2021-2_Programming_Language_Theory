@@ -14,21 +14,29 @@ Make a language with racket
 
 [code](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/Racket_tutorial.rkt)  
 
-### Week2, 3 - [Modeling Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE_Week2~3)  
+
+### Week2, 3 - [Modeling Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE)  
 
 #### AE
 
-[Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/modeling.rkt), 
-[Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/parser.rkt), 
-[Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/interpreter.rkt)
+[AE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/modeling.rkt) 
 
-### Week4 - [Substitution]() 
+[AE_Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/parser.rkt)
+
+[AE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/interpreter.rkt)  
+
+
+### Week4 - [Substitution](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE)  
 
 #### WAE
 
-[Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/modeling.rkt), 
-[Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/parser.rkt), 
-[Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/interpreter.rkt)
+[Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/modeling.rkt)
+
+[Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/parser.rkt) 
+
+[Substitution](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/substitution.rkt)
+
+[Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/interpreter.rkt)
  
 
 ### Week5 - [Functions]() 
@@ -36,7 +44,9 @@ Make a language with racket
 #### F1WAE
 
 [Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/modeling.rkt), 
+
 [Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/parser.rkt), 
+
 [Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/interpreter.rkt)
 
 ### Week6 - [First Class Functions]() 
@@ -44,5 +54,7 @@ Make a language with racket
 #### FWAE
 
 [Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/modeling.rkt), 
+
 [Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/parser.rkt), 
+
 [Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/interpreter.rkt)
