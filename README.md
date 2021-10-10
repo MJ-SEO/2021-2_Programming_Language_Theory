@@ -30,13 +30,13 @@ Make a language with racket
 
 #### WAE
 
-[Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/modeling.rkt)
+[WAE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/modeling.rkt)
 
-[Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/parser.rkt) 
+[WAE_Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/parser.rkt) 
 
-[Substitution](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/substitution.rkt)
+[WAE_Substitution](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/substitution.rkt)
 
-[Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/interpreter.rkt)
+[WAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/interpreter.rkt)
  
 
 ### Week5 - [Functions]() 
