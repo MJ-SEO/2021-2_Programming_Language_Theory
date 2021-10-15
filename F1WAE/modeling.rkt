@@ -1,16 +1,24 @@
 #lang plai
 
-(define-type WAE
+(define-type DefrdSub
+	     [mtSub]
+	     [aSub (name symbol?)(value number?)(saved DefrdSub?)])
+
+(define-type FunDef
+	     [fundef (fun-name symbol?)
+		     (arg-name symbol?)
+		     (body F1WAE?)])
+
+(define-type F1WAE
 	     [num (n number?)]
-	     [add (lhs WAE?) (rhs WAE?)]
-	     [sub (lhs WAE?) (rhs WAE?)]
-	     [with (name symbol?) (named-expr WAE?) (body WAE?)]
+	     [add (lhs F1WAE?) (rhs F1WAE?)]
+	     [sub (lhs F1WAE?) (rhs F1WAE?)]
+	     [with (name symbol?) (named-expr F1WAE?) (body F1WAE?)]
 	     [id (id symbol?)]
+	     [app (ftn symbol?)(arg F1WAE?)]
 	     )
 
 (add (num 1) (num 2))
 
-(define ae1 (add (sub (num 2) (num 1)) (num 3)))
-(sub? ae1)
-(add-lhs ae1)
-(add-rhs ae1)
+(fundef 'identify 'x (id 'x))
+(app 'idenfity (num 8))
