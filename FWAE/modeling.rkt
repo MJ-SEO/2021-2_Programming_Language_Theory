@@ -4,21 +4,16 @@
 	     [mtSub]
 	     [aSub (name symbol?)(value number?)(saved DefrdSub?)])
 
-(define-type FunDef
-	     [fundef (fun-name symbol?)
-		     (arg-name symbol?)
-		     (body F1WAE?)])
-
-(define-type F1WAE
+(define-type FWAE
 	     [num (n number?)]
-	     [add (lhs F1WAE?) (rhs F1WAE?)]
-	     [sub (lhs F1WAE?) (rhs F1WAE?)]
-	     [with (name symbol?) (named-expr F1WAE?) (body F1WAE?)]
+	     [add (lhs FWAE?) (rhs FWAE?)]
+	     [sub (lhs FWAE?) (rhs FWAE?)]
+	     [with (name symbol?) (named-expr FWAE?) (body FWAE?)] ; idtf, value, expression
 	     [id (id symbol?)]
-	     [app (ftn symbol?)(arg F1WAE?)]
+	     [fun (param symbol?)(body FWAE?)]	; function definition
+	     [app (ftn FWAE?)(arg FWAE?)]	; function call (fundef)(arg)
 	     )
 
-(add (num 1) (num 2))
+(fun 'x (add (id 'x)(id 'x)))
+(app (fun 'x (add (id 'x)(id 'x))) (num 10))
 
-(fundef 'identify 'x (id 'x))
-(app 'idenfity (num 8))

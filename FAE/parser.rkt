@@ -1,18 +1,18 @@
 #lang pial
 
-;[constract] parse : sexp -> FWAE (sub expression into FWAE)
-;[purpose] To convert s-expression of into FWAE
+;[constract] parse : sexp -> FAE (sub expression into FAE)
+;[purpose] To convert s-expression of into FAE
 
 (define (parse sexp) 
   (match sexp
 	 [(? number?) (num sexp)] 
 	 [(list '+ l r) (add (parse l) (parse r))]
 	 [(list '- l r) (sub (parse l) (parse r))]
-	 [(list 'with (list i v) e) (with i (parse v) (parse e))]
+	 [(list 'with (list i v) e) (app (fun i (parse e) (parse v)))]
 	 [(? symbol?) (id sexp)]
 	 [(list 'fun (list p) b) (fun p (parse b))]
-	 [(list f a) (app (parse f) (parse a))]
-	 [else (error 'parse "bad stntax: ~a" sexp)]
+	 [(list f a) (app (parse f)(parse a))]
+	 [else (error 'parse "bad syntax: ~a" sexp)]
 	 )
   )
 

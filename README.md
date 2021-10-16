@@ -15,7 +15,7 @@ Make a language with racket
 [code](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/Racket_tutorial.rkt)  
 
 
-### Week2, 3[AE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE) - Modeling Language
+### Week2, 3 - Modeling Language [[AE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE)]
 
 [AE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/modeling.rkt) 
 
@@ -24,7 +24,7 @@ Make a language with racket
 [AE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/AE/interpreter.rkt)  
 
 
-### Week4[WAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE) - Substitution
+### Week4 - Substitution [WAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE)
   
 [WAE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/modeling.rkt)
 
@@ -34,7 +34,7 @@ Make a language with racket
 
 [WAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE/interpreter.rkt)
  
-### Week5[F1WAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE) - Functions & Deferred Substitution
+### Week5 - Functions & Deferred Substitution [F1WAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE)
 
 [F1WAE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/modeling.rkt)
 
@@ -44,10 +44,10 @@ Make a language with racket
 
 [F1WAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/interpreter.rkt)
 
-### Week6[FWAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FWAE), [FAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE) - First Class Functions
+### Week6[FWAE] - First Class Function (https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FWAE), [FAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/WAE)
 
-[Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/modeling.rkt), 
+[Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FAE/modeling.rkt), 
 
-[Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/parser.rkt), 
+[Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FAE/parser.rkt), 
 
-[Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/F1WAE/interpreter.rkt)
+[Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FAE/interpreter.rkt)

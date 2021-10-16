@@ -1,50 +1,31 @@
 #lang pial
 
-;[constract] lookup: symbol DefrdSub -> number
-;[purpose] return number of specific symbol(identifier) 
+;[constract] num-op: (number number -> number) -> (FWAE FWAE -> FWAE)
 
-(define (lookup name ds)
-  (type-case DefrdSub ds
-	     [mtSub () (error 'lookup "free identifier")]
-	     [aSub (i v saved) (if (symbol=? i name) v 
-				 (lookup name saved))]
-	     )
-  )
+(define (num-op op)
+    (lambda (x y) 
+          (num (op (num-n x)(num-n y)))))
+(define num+ (num-op +))
+(define num- (num-op -))
 
-;[contract] lookup-fundef: symbol list-of-fundef -> number
-;[purpose] 
+;[constract] interp : FWAE -> FWAE
+;[purpose] To convert FWAE into FWAE, No Deferred Substitution
 
-(define (lookup-fundef name fundefs)
-  (cond
-    [(empty? fundefs)
-     (error 'lookip-fundef "unknown function")]
-    [else
-      (if (symbol=? name(fundef-fun-name(first fundefs)))
-	(first fundefs)
-	(lookup-fundef name (Rest fundefs)))]
-    )
-  )
-
-;[constract] interp : F1WAE list-of-FuncDef DefrdSub -> number
-;[purpose] To convert F1WAE with fundefs and DefrdSub into number
-
-(define (interp f1wae fundefs ds)
-  (type-case F1WAE f1wae
-	     [num (n) n]
-	     [add (l r) (+ (interp l fundefs ds) (interp r fundefs ds))]
-	     [sub (l r) (- (interp l fundefs ds) (interp r fundefs ds))]
-	     [with (i v e) (interp e fundefs (aSub i (interp v fundefs ds) ds))]
-	     [id (s) (lookup s ds)]
+(define (interp fwae)
+  (type-case FWAE fwae
+	     [num (n) fwae]
+	     [add (l r) (num+ (interp l) (interp r))]
+	     [sub (l r) (num- (interp l) (interp r))]
+	     [with (i v e) (interp (subst e i (interp v)))]
+	     [id (s) (error 'interp "free identifier")]
+	     [fun (p b) fwae]
 	     [app (f a) (local
-			  [(define a_fundef(lookup-fundef f fundefs))]
-			  (interp(fundef-body a_fundef)
-			    fundefs
-			    (aSub(fundef-arg-name a_fundef)
-			      (interp a fundefs ds)
-			      (mtSub))))]
+			  [(define ftn(interp f))]
+			  (interp (subst(fun-body ftn)
+				    	(fun-param ftn)
+				    	(interp a))))]  ;; body, param, value
 	     )
   )
-
 
 (test (interp (parse '3) empty (mtSub)) 3)
 (test (interp (parse '{+ 3 4}) empty (mtSub)) 7)
