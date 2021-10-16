@@ -1,28 +1,27 @@
 #lang pial
 
 ;[constract] lookup: symbol DefrdSub -> number
-;[purpose] return number of specific symbol(identifier)
+;[purpose] return number of specific symbol(identifier) 
 
 (define (lookup name ds)
   (type-case DefrdSub ds
 	     [mtSub () (error 'lookup "free identifier")]
-	     [aSub (i v saved) (if (symbol=? i name) v
+	     [aSub (i v saved) (if (symbol=? i name) v 
 				 (lookup name saved))]
 	     )
   )
 
-(test (lookup 'x (aSub 'x 1 (mtSub))) 1)
-
-;[constract] lookup-fundef: symbol list-of-fundef -> number
+;[contract] lookup-fundef: symbol list-of-fundef -> number
+;[purpose] 
 
 (define (lookup-fundef name fundefs)
   (cond
     [(empty? fundefs)
-     (error 'lookup-fundef "unknown function")]
+     (error 'lookip-fundef "unknown function")]
     [else
       (if (symbol=? name(fundef-fun-name(first fundefs)))
 	(first fundefs)
-	(lookup-fundef name (rest fundefs)))]
+	(lookup-fundef name (Rest fundefs)))]
     )
   )
 
