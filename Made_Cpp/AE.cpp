@@ -15,7 +15,7 @@ using namespace std;
 int
 interp(string abstract_syntax){
 	int result = 0;
-
+	
 
 	return result;
 }
@@ -46,9 +46,25 @@ parse(string concrete_syntax){
 				abstract_syntax.append("sub ");
 			}
 			else if(isdigit(stringBuffer[i])){
-				string temp;
-				temp = "(num 5)";	
-				abstract_syntax.append(temp);
+				string num("");
+				num.push_back(stringBuffer[i]);
+
+				while(isdigit(stringBuffer[i+1])){
+					num.push_back(stringBuffer[i+1]);
+					i++;
+				}
+
+				char* temp = (char*)malloc(sizeof(char) * 10);
+				memset(temp, 0, 10);
+				sprintf(temp, "(num %s)", num.c_str());
+
+				string str(temp);
+				abstract_syntax.append(str);
+				free(temp);
+			}
+			else{
+				perror("bad syntax");
+				exit(1);
 			}
 		}	
 	}
@@ -77,15 +93,19 @@ int main(int argc, char *argv[]){
 	getline(cin, input);
 
 	if(p_option){
-		printf("Parser\n");	
 		cout << "[Concreat] " << input << "\n";
-		string t;
-		t = parse(input);
-		cout << "[Abstract] " << t << "\n";
+		string temp;
+		temp = parse(input);
+		cout << "[Abstract] " << temp << "\n";
 	}
 	else{
-		printf("ZZ\n");
-		cout << input << "\n";
+		cout << "[Concreat] " << input << "\n";
+		string temp;
+		temp = parse(input);
+		cout << "[Abstract] " << temp << "\n";
+		string result;
+		result = parse(temp);
+		cout << "[Result] " << result << "\n";
 	}
 
 }
