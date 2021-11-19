@@ -58,7 +58,7 @@ Make a language with racket
 
 [LFAE_Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/LFAE/parser.rkt), 
 
-[LFAE_HelperFunctions]((https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/LFAE/helper.rkt), 
+[LFAE_HelperFunctions](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/LFAE/helper.rkt), 
 
 [LFAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/LFAE/interpreter.rkt), 
 
