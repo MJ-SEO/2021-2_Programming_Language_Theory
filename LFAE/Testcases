@@ -1,0 +1,19 @@
+(interp (add (num 2)(num 10)) (mtSub))
+(interp (num 10) (mtSub))
+(num 123456)
+(test (interp (parse '{with {y 10} {fun {x} {+ y x}}}) (mtSub))
+      (closureV 'x (add (id 'y)(id 'x)) (aSub 'y(numV 10)(mtSub))))
+(parse '{with {y 10} {fun {x} {+ y x}}})
+(parse '{{fun {x} 0} {+ 1 {fun {y} 2}}})
+(num 434867646)
+(run '{{fun {x} 0} {+ 1 {fun {y} 2}}} (mtSub))
+
+(parse '{with {x 3} {with {f {fun {y} {+ x y}}} {with {x 5} {f 4}}}})
+(run '{with {x 3} {with {f {fun {y} {+ x y}}} {with {x 5} {f 4}}}} (mtSub))
+;(run '{{fun {x} {+1 x}} 10} (mtSub))
+
+(run '{{fun {x} 0} {+ 1 {fun {y} 2}}} (mtSub))
+(parse '{{fun {x} {x {+ 4 5}}} {fun {x} 0}})
+(run '{{fun {x} {x {+ 4 5}}} {fun {x} 0}} (mtSub))
+
+(run '{with {y 10} {fun {x} {+ y x}}} (mtSub))
