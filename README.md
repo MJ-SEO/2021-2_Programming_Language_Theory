@@ -50,7 +50,7 @@ Make a language with racket
 
 [FAE_Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FAE/parser.rkt)
 
-[FA_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FAE/interpreter.rkt)
+[FAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/FAE/interpreter.rkt)
 
 ### 6. Laizness [[LFAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/LFAE)]
 
@@ -73,10 +73,26 @@ Make a language with racket
 [RCFAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/RCFAE/interpreter.rkt) 
 
 
-### 8. Mutable Data Structure [[BMFAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/RCFAE)]
+### 8. Mutable Data Structure [[BFAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BFAE)]
+
+[BFAE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BFAE/modeling.rkt)
+
+[BFAE_Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BFAE/parser.rkt) 
+
+[BFAE_HelperFunctions](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BFAE/helper.rkt) 
+
+[BFAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BFAE/interpreter.rkt) 
 
 
-### 9. Variables [[BMFAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/RCFAE)]
+### 9. Variables [[BMFAE](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BMFAE)]
+
+[BMFAE_Language](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BMFAE/modeling.rkt)
+
+[BMFAE_Parser](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BMFAE/parser.rkt) 
+
+[BMFAE_HelperFunctions](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BMFAE/helper.rkt) 
+
+[BMFAE_Interpreter](https://github.com/MJ-SEO/2021-2_Programming_Language_Theory/blob/master/BMFAE/interpreter.rkt) 
 
 
 ### 10. Continuation
