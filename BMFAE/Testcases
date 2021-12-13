@@ -1,0 +1,44 @@
+(interp (add (num 2)(num 10)) (mtSub))
+(interp (num 10) (mtSub))
+(num 123456)
+(test (interp (parse '{with {y 10} {fun {x} {+ y x}}}) (mtSub))
+      (closureV 'x (add (id 'y)(id 'x)) (aSub 'y(numV 10)(mtSub))))
+(parse '{with {y 10} {fun {x} {+ y x}}})
+(parse '{{fun {x} 0} {+ 1 {fun {y} 2}}})
+(num 434867646)
+(run '{{fun {x} 0} {+ 1 {fun {y} 2}}} (mtSub))
+
+(parse '{with {x 3} {with {f {fun {y} {+ x y}}} {with {x 5} {f 4}}}})
+(run '{with {x 3} {with {f {fun {y} {+ x y}}} {with {x 5} {f 4}}}} (mtSub))
+;(run '{{fun {x} {+1 x}} 10} (mtSub))
+
+(run '{{fun {x} 0} {+ 1 {fun {y} 2}}} (mtSub))
+(parse '{{fun {x} {x {+ 4 5}}} {fun {x} 0}})
+(run '{{fun {x} {x {+ 4 5}}} {fun {x} 0}} (mtSub))
+
+(run '{with {y 10} {fun {x} {+ y x}}} (mtSub))
+
+(parse '{rec {count {fun {n} {if0 n 0 {+ 1 {count{- n 1}}}}}} {count 8}})
+
+(run '{rec {count {fun {n} {if0 n 0 {+ 1 {count{- n 1}}}}}} {count 8}} (mtSub))
+
+(run '{with {a 7} a} (mtSub) (mtSto))
+
+(run '{+ 7 6} (mtSub) (mtSto))
+
+(run '{with {b {newbox 7}}
+            {seqn {setbox b 10}
+                  {openbox b}}} (mtSub) (mtSto))
+
+(run '{with {b {newbox 10}}
+          {+ {+ {seqn {setbox b 7} {openbox b}}
+                   {seqn {setbox b 10} {openbox b}}}
+               {openbox b}}} (mtSub) (mtSto))
+
+(parse '{with {a 3} {setvar a 5}})
+
+(run '{with {a 3} {setvar a 5}} (mtSub) (mtSto))
+
+(parse '{with {a 3} {seqn {{fun {x} {setvar x 5}} a} a}})
+
+(run '{with {a 3} {seqn {{fun {x} {setvar x 5}} a} a}} (mtSub) (mtSto))
